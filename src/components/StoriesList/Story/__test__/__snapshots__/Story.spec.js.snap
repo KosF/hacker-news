@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Story /> should render correct article 1`] = `
+<Story
+  data={
+    Object {
+      "author": Object {
+        "id": "1",
+        "karma": 1,
+      },
+      "score": 1,
+      "time": 1,
+      "title": "Title",
+    }
+  }
+>
+  <article
+    className="border-bottom p-3"
+  >
+    <header
+      className="mb-1"
+    >
+      <styled.h1>
+        <h1
+          className="sc-AxirZ jiZUVp"
+        >
+          Title
+        </h1>
+      </styled.h1>
+    </header>
+    <styled.p>
+      <p
+        className="sc-AxjAm fKuqGd"
+      >
+        by 
+        1
+         (
+        1
+        )
+        , 
+        <TimeAgo
+          className=""
+          datetime="Thu Jan 01 1970 03:00:01 GMT+0300 (Eastern European Standard Time)"
+          live={true}
+        >
+          <time
+            className=""
+          >
+            50 years ago
+          </time>
+        </TimeAgo>
+         | score:
+         
+        1
+      </p>
+    </styled.p>
+  </article>
+</Story>
+`;

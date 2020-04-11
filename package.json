@@ -1,0 +1,99 @@
+{
+  "name": "hacker-news",
+  "version": "0.1.0",
+  "description": "An application to display ten stories in a random order from the list of best stories.",
+  "author": "Kos",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js --open",
+    "build": "webpack --config webpack.config.js",
+    "lint": "eslint .",
+    "lintfix": "eslint . --fix",
+    "precommit": "lint-staged",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "lint-staged": {
+    "*.{js, jsx, json}": [
+      "prettier --write",
+      "eslint . --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "https://localhost/",
+    "setupFiles": [
+      "<rootDir>/jestsetup.js"
+    ],
+    "moduleNameMapper": {
+      "^Components(.*)$": "<rootDir>/src/components/$1",
+      "^Src(.*)$": "<rootDir>/src/$1"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js"
+    ],
+    "coverageReporters": [
+      "text-summary"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash": "^4.17.15",
+    "n": "^6.5.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.0",
+    "timeago-react": "^3.0.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.16.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-import-resolver-webpack": "^0.12.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "html-loader": "^0.5.5",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^2.0.4",
+    "redux-mock-store": "^1.5.4",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "browserslist": [
+    "last 2 version",
+    "IE >= 10"
+  ]
+}
